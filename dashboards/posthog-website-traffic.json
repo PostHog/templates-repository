@@ -1,0 +1,455 @@
+{
+  "template_name": "Website traffic",
+  "source_dashboard": null,
+  "dashboard_description": "",
+  "dashboard_filters": {},
+  "tiles": [
+    {
+      "name": "Website Unique Users (Total)",
+      "type": "INSIGHT",
+      "color": "blue",
+      "filters": {
+        "events": [{ "id": "$pageview", "math": "dau", "type": "events" }],
+        "compare": true,
+        "display": "BoldNumber",
+        "insight": "TRENDS",
+        "interval": "day",
+        "date_from": "-30d"
+      },
+      "layouts": {
+        "sm": {
+          "h": 5,
+          "i": "21",
+          "w": 6,
+          "x": 0,
+          "y": 0,
+          "minH": 5,
+          "minW": 3
+        },
+        "xs": {
+          "h": 5,
+          "i": "21",
+          "w": 1,
+          "x": 0,
+          "y": 0,
+          "minH": 5,
+          "minW": 1
+        }
+      },
+      "description": "Shows the number of unique users that use your app every day."
+    },
+    {
+      "name": "Organic SEO Unique Users (Total)",
+      "type": "INSIGHT",
+      "color": "green",
+      "filters": {
+        "events": [{ "id": "$pageview", "math": "dau", "type": "events" }],
+        "compare": true,
+        "display": "BoldNumber",
+        "insight": "TRENDS",
+        "interval": "day",
+        "date_from": "-30d",
+        "properties": {
+          "type": "AND",
+          "values": [
+            {
+              "type": "AND",
+              "values": [
+                {
+                  "key": "$referring_domain",
+                  "type": "event",
+                  "value": "google",
+                  "operator": "icontains"
+                },
+                {
+                  "key": "utm_source",
+                  "type": "event",
+                  "value": "is_not_set",
+                  "operator": "is_not_set"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "layouts": {
+        "sm": {
+          "h": 5,
+          "i": "22",
+          "w": 6,
+          "x": 6,
+          "y": 0,
+          "minH": 5,
+          "minW": 3
+        },
+        "xs": {
+          "h": 5,
+          "i": "22",
+          "w": 1,
+          "x": 0,
+          "y": 5,
+          "minH": 5,
+          "minW": 1
+        }
+      },
+      "description": ""
+    },
+    {
+      "name": "Website Unique Users (Breakdown)",
+      "type": "INSIGHT",
+      "color": "blue",
+      "filters": {
+        "events": [{ "id": "$pageview", "math": "dau", "type": "events" }],
+        "display": "ActionsBar",
+        "insight": "TRENDS",
+        "interval": "week",
+        "date_from": "-30d"
+      },
+      "layouts": {
+        "sm": {
+          "h": 5,
+          "i": "23",
+          "w": 6,
+          "x": 0,
+          "y": 5,
+          "minH": 5,
+          "minW": 3
+        },
+        "xs": {
+          "h": 5,
+          "i": "23",
+          "w": 1,
+          "x": 0,
+          "y": 10,
+          "minH": 5,
+          "minW": 1
+        }
+      },
+      "description": ""
+    },
+    {
+      "name": "Organic SEO Unique Users (Breakdown)",
+      "type": "INSIGHT",
+      "color": "green",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "type": "events",
+            "properties": [
+              {
+                "key": "$referring_domain",
+                "type": "event",
+                "value": "google",
+                "operator": "icontains"
+              },
+              {
+                "key": "utm_source",
+                "type": "event",
+                "value": "is_not_set",
+                "operator": "is_not_set"
+              }
+            ]
+          }
+        ],
+        "display": "ActionsBar",
+        "insight": "TRENDS",
+        "interval": "week",
+        "date_from": "-30d"
+      },
+      "layouts": {
+        "sm": {
+          "h": 5,
+          "i": "24",
+          "w": 6,
+          "x": 6,
+          "y": 5,
+          "minH": 5,
+          "minW": 3
+        },
+        "xs": {
+          "h": 5,
+          "i": "24",
+          "w": 1,
+          "x": 0,
+          "y": 15,
+          "minH": 5,
+          "minW": 1
+        }
+      },
+      "description": ""
+    },
+    {
+      "name": "Sessions Per User",
+      "type": "INSIGHT",
+      "color": null,
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0,
+            "properties": []
+          },
+          {
+            "id": "$pageview",
+            "math": "unique_session",
+            "name": "$pageview",
+            "type": "events",
+            "order": 1,
+            "properties": []
+          }
+        ],
+        "display": "ActionsLineGraph",
+        "formula": "B/A",
+        "insight": "TRENDS",
+        "interval": "week",
+        "date_from": "-30d"
+      },
+      "layouts": {
+        "sm": {
+          "h": 5,
+          "i": "25",
+          "w": 6,
+          "x": 0,
+          "y": 10,
+          "minH": 5,
+          "minW": 3
+        },
+        "xs": {
+          "h": 5,
+          "i": "25",
+          "w": 1,
+          "x": 0,
+          "y": 20,
+          "minH": 5,
+          "minW": 1
+        }
+      },
+      "description": ""
+    },
+    {
+      "name": "Pages Per User",
+      "type": "INSIGHT",
+      "color": null,
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "total",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0,
+            "properties": []
+          },
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 1,
+            "properties": []
+          }
+        ],
+        "display": "ActionsLineGraph",
+        "formula": "A/B",
+        "insight": "TRENDS",
+        "interval": "week",
+        "date_from": "-30d"
+      },
+      "layouts": {
+        "sm": {
+          "h": 5,
+          "i": "26",
+          "w": 6,
+          "x": 6,
+          "y": 10,
+          "minH": 5,
+          "minW": 3
+        },
+        "xs": {
+          "h": 5,
+          "i": "26",
+          "w": 1,
+          "x": 0,
+          "y": 25,
+          "minH": 5,
+          "minW": 1
+        }
+      },
+      "description": ""
+    },
+    {
+      "name": "Top Website Pages (Overall)",
+      "type": "INSIGHT",
+      "color": "black",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "unique_session",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0
+          }
+        ],
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$current_url",
+        "date_from": "-30d",
+        "properties": {
+          "type": "AND",
+          "values": [
+            {
+              "type": "AND",
+              "values": [
+                {
+                  "key": "$current_url",
+                  "type": "event",
+                  "value": "?",
+                  "operator": "not_icontains"
+                }
+              ]
+            }
+          ]
+        },
+        "breakdown_type": "event"
+      },
+      "layouts": {
+        "sm": {
+          "h": 8,
+          "i": "27",
+          "w": 6,
+          "x": 0,
+          "y": 15,
+          "minH": 5,
+          "minW": 3
+        },
+        "xs": {
+          "h": 5,
+          "i": "27",
+          "w": 1,
+          "x": 0,
+          "y": 30,
+          "minH": 5,
+          "minW": 1
+        }
+      },
+      "description": ""
+    },
+    {
+      "name": "Top Website Pages (via Google)",
+      "type": "INSIGHT",
+      "color": "black",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "unique_session",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0
+          }
+        ],
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$current_url",
+        "date_from": "-30d",
+        "properties": {
+          "type": "AND",
+          "values": [
+            {
+              "type": "AND",
+              "values": [
+                {
+                  "key": "$current_url",
+                  "type": "event",
+                  "value": "?",
+                  "operator": "not_icontains"
+                },
+                {
+                  "key": "$referring_domain",
+                  "type": "event",
+                  "value": "google",
+                  "operator": "icontains"
+                }
+              ]
+            }
+          ]
+        },
+        "breakdown_type": "event"
+      },
+      "layouts": {
+        "sm": {
+          "h": 8,
+          "i": "28",
+          "w": 6,
+          "x": 6,
+          "y": 15,
+          "minH": 5,
+          "minW": 3
+        },
+        "xs": {
+          "h": 5,
+          "i": "28",
+          "w": 1,
+          "x": 0,
+          "y": 35,
+          "minH": 5,
+          "minW": 1
+        }
+      },
+      "description": ""
+    },
+    {
+      "name": "Website Users by Location",
+      "type": "INSIGHT",
+      "color": null,
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0
+          }
+        ],
+        "display": "WorldMap",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$geoip_country_code",
+        "date_from": "-30d",
+        "breakdown_type": "person"
+      },
+      "layouts": {
+        "sm": {
+          "h": 8,
+          "i": "29",
+          "w": 12,
+          "x": 0,
+          "y": 23,
+          "minH": 5,
+          "minW": 3
+        },
+        "xs": {
+          "h": 5,
+          "i": "29",
+          "w": 1,
+          "x": 0,
+          "y": 40,
+          "minH": 5,
+          "minW": 1
+        }
+      },
+      "description": ""
+    }
+  ],
+  "tags": [],
+  "scope": "global"
+}
