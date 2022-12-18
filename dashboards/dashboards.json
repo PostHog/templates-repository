@@ -1,0 +1,16 @@
+[
+  {
+    "name": "PostHog Product Analytics",
+    "url": "./posthog-product-analytics.json",
+    "description": "The OG PostHog product analytics dashboard template",
+    "verified": true,
+    "maintainer": "official"
+  },
+  {
+    "name": "Website Traffic",
+    "url": "./posthog-website-traffic.json",
+    "description": "The website analytics dashboard that PostHog uses",
+    "verified": true,
+    "maintainer": "official"
+  }
+]
