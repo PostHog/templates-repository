@@ -1,14 +1,14 @@
 [
   {
     "name": "Product analytics",
-    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/6ebcee52654f5b1de64ff006ba7d0327b51a71af/dashboards/posthog-product-analytics.json",
+    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/7916bed2463112a6354078065db1892eda51fd17/dashboards/posthog-product-analytics.json",
     "description": "The OG PostHog product analytics dashboard template",
     "verified": true,
     "maintainer": "official"
   },
   {
     "name": "Website traffic",
-    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/6ebcee52654f5b1de64ff006ba7d0327b51a71af/dashboards/posthog-website-traffic.json",
+    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/7916bed2463112a6354078065db1892eda51fd17/dashboards/posthog-website-traffic.json",
     "description": "The website analytics dashboard that PostHog uses",
     "verified": true,
     "maintainer": "official"
