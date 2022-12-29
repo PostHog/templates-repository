@@ -1,7 +1,7 @@
 [
   {
     "name": "Product analytics",
-    "url": "./posthog-product-analytics.json",
+    "url": "https://github.com/PostHog/templates-repository/blob/33d8e4552afa24f12b93444bf8773eada89197cf/dashboards/posthog-product-analytics.json",
     "description": "The OG PostHog product analytics dashboard template",
     "verified": true,
     "maintainer": "official"
