@@ -1,6 +1,6 @@
 [
   {
-    "name": "PostHog Product Analytics",
+    "name": "Product Analytics",
     "url": "./posthog-product-analytics.json",
     "description": "The OG PostHog product analytics dashboard template",
     "verified": true,
