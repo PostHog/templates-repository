@@ -1,6 +1,5 @@
 {
   "template_name": "Product analytics",
-  "source_dashboard": null,
   "dashboard_description": "",
   "dashboard_filters": {},
   "tiles": [
@@ -134,5 +133,4 @@
     }
   ],
   "tags": [],
-  "scope": "global"
 }
