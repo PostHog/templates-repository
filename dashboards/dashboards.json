@@ -8,7 +8,7 @@
   },
   {
     "name": "Website traffic",
-    "url": "./posthog-website-traffic.json",
+    "url": "https://github.com/PostHog/templates-repository/blob/532b9883cc142735a85b332f10de0c6ea4b1108c/dashboards/posthog-website-traffic.json",
     "description": "The website analytics dashboard that PostHog uses",
     "verified": true,
     "maintainer": "official"
