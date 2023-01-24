@@ -1,0 +1,26 @@
+{
+  "name": "templates-repository",
+  "version": "1.0.0",
+  "description": "![a dalle generated image of a hedgehog by a printing press](./printing-hedgehog.png)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PostHog/templates-repository.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PostHog/templates-repository/issues"
+  },
+  "homepage": "https://github.com/PostHog/templates-repository#readme",
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "jest": "^29.4.0"
+  }
+}
