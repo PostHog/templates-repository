@@ -6,12 +6,8 @@ jobs:
     name: Validate dashboard template schema
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Validate Dashboard Templates schema
-        uses: snapcart/json-schema-validator@v1.0.0
+        uses: cardinalby/schema-validator-action@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          json_schema: /dashboards/dashboard-template.schema
-          json_path_pattern: ^/dashboards/*.json$
-          send_comment: true
-          clear_comments: true
+          file: '/dashboards/*.json'
+          schema: '/dashboards/dashboard-template.schema'
