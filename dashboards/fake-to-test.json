@@ -1,0 +1,8 @@
+{
+  "template_name": "To test validation action",
+  "dashboard_filters": {},
+  "tags": [],
+  "tiles": [
+    "not an object"
+  ]
+}
