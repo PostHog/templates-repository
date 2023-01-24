@@ -9,5 +9,5 @@ jobs:
       - name: Validate Dashboard Templates schema
         uses: cardinalby/schema-validator-action@v1
         with:
-          file: '/dashboards/*.json'
-          schema: '/dashboards/dashboard-template.schema'
+          file: 'dashboards/*.json'
+          schema: 'dashboards/dashboard-template.schema'
