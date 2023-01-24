@@ -22,7 +22,7 @@
   },
   {
     "name": "User research",
-    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/ba1e7191d0e3c1f0b93cc37e01525f331147c20d/dashboards/posthog-user-research.json",
+    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/b0d0a9b4d3fdbc9c1691f03b03fa7f9fc7e8b016/dashboards/posthog-user-research.json",
     "description": "This template helps you get an idea of who your users are, how they interact with your product and what browsers or devices they use.",
     "verified": true,
     "maintainer": "official"
