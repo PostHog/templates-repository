@@ -15,7 +15,7 @@
   },
   {
     "name": "Advertising analytics",
-    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/eb44d30aa4d239992766da2015893b62633bde4a/dashboards/posthog-advertising-analytics.json",
+    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/424b063e483a4d79e37b45bf112396a8982e5886/dashboards/posthog-advertising-analytics.json",
     "description": "How your online advertising performs, as well as where traffic comes from.",
     "verified": true,
     "maintainer": "official"
