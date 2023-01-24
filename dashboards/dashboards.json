@@ -19,5 +19,12 @@
     "description": "How your online advertising performs, as well as where traffic comes from.",
     "verified": true,
     "maintainer": "official"
+  },
+  {
+    "name": "User research",
+    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/ba1e7191d0e3c1f0b93cc37e01525f331147c20d/dashboards/posthog-user-research.json",
+    "description": "This template helps you get an idea of who your users are, how they interact with your product and what browsers or devices they use.",
+    "verified": true,
+    "maintainer": "official"
   }
 ]
