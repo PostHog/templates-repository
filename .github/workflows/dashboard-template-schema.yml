@@ -10,7 +10,8 @@ jobs:
       - name: Validate Dashboard Templates schema
         uses: walbo/validate-json@v1.1.0
         with:
-          files: dashboard/**/*.json
+          files: dashboards/**/*.json
           # optional, defaults to `$schema` in your JSON file
-          schema: dashboard/dashboard-template.schema
+          schema: dashboards/dashboard-template.schema
+          print-valid-files: true
 
