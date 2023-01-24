@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://posthog.com/dashboard-template.schema.json",
+  "title": "Dashboard Template",
+  "description": "A template for a PostHog dashboard",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the dashboard template. Is used as a unique key for the template.",
+      "type": "string"
+    },
+    "dashboard_description": {
+      "description": "A description to show in PostHog.",
+      "type": "string"
+    },
+    "dashboard_filters": {
+      "description": "A PostHog filter that affects all the tiles on this dashboard. e.g. date range",
+      "type": "object"
+    },
+    "tags": {
+      "description": "Tags for the dashboard",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "tiles": {
+      "description": "The tiles that make up the dashboard",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "description": "the type of the tile e.g. INSIGHT or TEXT",
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the tile"
+          },
+          "description": {
+            "type": ["string", "null"],
+            "description": "A description to show on the tile in PostHog."
+          },
+          "filters": {
+            "type": "object"
+          },
+          "layouts": {
+            "type": "object"
+          },
+          "color": {
+            "type": ["string", "null"],
+            "description": "The color of the tile in PostHog."
+          }
+        }
+      },
+      "minItems": 0
+    }
+  },
+  "required": ["name", "tiles"]
+}
