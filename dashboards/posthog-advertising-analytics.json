@@ -1,0 +1,256 @@
+{
+  "template_name": "Template proposal: Advertising analytics",
+  "description": "This template helps you get an idea of how your online advertising performs, as well as where traffic comes from generally and what your best performing content is. This can you decide which content to invest in, as well which advertising platforms work well for your userbase.",
+  "dashboard_filters": {},
+  "tags": [],
+  "tiles": [
+    {
+      "type": "INSIGHT",
+      "name": "What content performs best for advertising?",
+      "description": "This chart looks at all pageviews where a UTM Campaign was set, but breaks down by the current URL. This enables you to see which content you're promoting most successfully, which can be useful if you're promoting several pieces within a campaign and want to know which performs best.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0,
+            "properties": [
+              {
+                "key": "utm_content",
+                "type": "event",
+                "value": "is_set",
+                "operator": "is_set"
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "date_to": null,
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$current_url",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "breakdown_type": "event",
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "How many users visited from a paid advert?",
+      "description": "This figure is the number of unique visitors in the last 30 days who had an initial UTM Source set. You can expand on this event by adding a conversion event, such as a sign-up, to see how many users converted from a paid advert.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0,
+            "properties": [
+              {
+                "key": "$initial_utm_source",
+                "type": "person",
+                "value": "is_set",
+                "operator": "is_set"
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "compare": true,
+        "date_to": null,
+        "display": "BoldNumber",
+        "insight": "TRENDS",
+        "interval": "month",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "Which is the best performing social media platform?",
+      "description": "This chart looks at all pageviews from unique users in the last 30 days from referring domains that match to either Twitter, Facebook, LinkedIn, Reddit, or Instagram. This can be useful for finding which social media network your existing users come from, so you can allocate advertising resources.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0,
+            "properties": [
+              {
+                "key": "$referring_domain",
+                "type": "event",
+                "value": "twitter",
+                "operator": "icontains"
+              }
+            ],
+            "custom_name": "Twitter"
+          },
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 1,
+            "properties": [
+              {
+                "key": "$referring_domain",
+                "type": "event",
+                "value": "facebook",
+                "operator": "icontains"
+              }
+            ],
+            "custom_name": "Facebook"
+          },
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 2,
+            "properties": [
+              {
+                "key": "$referring_domain",
+                "type": "event",
+                "value": "reddit",
+                "operator": "icontains"
+              }
+            ],
+            "custom_name": "Reddit"
+          },
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 3,
+            "properties": [
+              {
+                "key": "$referring_domain",
+                "type": "event",
+                "value": "linkedin",
+                "operator": "icontains"
+              }
+            ],
+            "custom_name": "LinkedIn"
+          },
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 4,
+            "properties": [
+              {
+                "key": "$referring_domain",
+                "type": "event",
+                "value": "instagram",
+                "operator": "icontains"
+              }
+            ],
+            "custom_name": "Instagram"
+          }
+        ],
+        "actions": [],
+        "date_to": null,
+        "display": "ActionsLineGraph",
+        "insight": "TRENDS",
+        "interval": "day",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "show_legend": true,
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "Which are the most successful UTM campaigns?",
+      "description": "This chart looks at all pageviews from unique users in the last 30 days where a UTM campaign is set. This is useful for helping you to find your most successful advertising campaigns.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0,
+            "properties": [
+              {
+                "key": "utm_campaign",
+                "type": "event",
+                "value": "is_set",
+                "operator": "is_set"
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "date_to": null,
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "utm_campaign",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "breakdown_type": "event",
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "Which is the most successful UTM source?",
+      "description": "This chart looks at all pageviews from unique users in the last 30 days where a UTM source is set. This is useful for helping you to find your most successful advertising channels.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0,
+            "properties": [
+              {
+                "key": "utm_source",
+                "type": "event",
+                "value": "is_set",
+                "operator": "is_set"
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "date_to": null,
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "utm_source",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "breakdown_type": "event",
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    }
+  ]
+}
