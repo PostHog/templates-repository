@@ -1,0 +1,277 @@
+{
+  "template_name": "User Research",
+  "dashboard_description": "This template helps you get an idea of who your users are, how they interact with your product and what browsers or devices they use. Additionally, you can use the 'Which users are highly engaged?' insight to find identified power users, so you can approach them for customer interviews or view their session recordings.",
+  "dashboard_filters": {},
+  "tags": [],
+  "tiles": [
+    {
+      "type": "INSIGHT",
+      "name": "How do most users access my product?",
+      "description": "This path shows the most 7 common paths taken by users over the last 30 days, starting at their initial pageview and proceeding for 5 steps. The size of a path reflects how common it is, while red areas reflect early drop-off. This can be especially useful for seeing where users get lost and understanding the most popular destinations.",
+      "filters": {
+        "date_to": null,
+        "insight": "PATHS",
+        "date_from": "-30d",
+        "edge_limit": 7,
+        "properties": [],
+        "step_limit": 5,
+        "funnel_filter": {},
+        "exclude_events": [],
+        "path_groupings": [],
+        "include_event_types": ["$pageview"],
+        "filter_test_accounts": true,
+        "local_path_cleaning_filters": []
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "What screen size do users have?",
+      "description": "This chart shows what the most popular screen height is for unique users over the past 30 days. You can correlate this with screen width by changing the 'Breakdown by' option to specify 'Screen Width'.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0
+          }
+        ],
+        "actions": [],
+        "date_to": null,
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$screen_height",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "show_legend": true,
+        "breakdown_type": "event",
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "What languages do users prefer?",
+      "description": "This chart looks at the most popular languages among users over the last 30 days, identified by the language they've chosen for their browser. This can help you identify if you need to consider translating your product, or marketing to specific geographies.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0
+          }
+        ],
+        "actions": [],
+        "compare": false,
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$browser_language",
+        "new_entity": [],
+        "properties": [],
+        "show_legend": true,
+        "breakdown_type": "event",
+        "hidden_legend_keys": {
+          "1": true
+        },
+        "filter_test_accounts": true,
+        "date_from": "-7d"
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "Which users are highly engaged?",
+      "description": "The GREEN section of this lifecycle chart shows identified users who completed a pageview in the last 30 days and in the previous 30 days, indicated strong engagement. By clicking through on each bar you can see a full list of the identified users, which is useful for arranging customer interviews or examining their sessions.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "total",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0,
+            "properties": [
+              {
+                "key": "email",
+                "type": "person",
+                "value": "is_set",
+                "operator": "is_set"
+              }
+            ]
+          }
+        ],
+        "actions": [],
+        "compare": false,
+        "date_to": null,
+        "display": "ActionsLineGraph",
+        "insight": "LIFECYCLE",
+        "interval": "week",
+        "shown_as": "Lifecycle",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "Where are my users experiencing frustration?",
+      "description": "This chart shows on which pages users have rageclicked the most in the last 30 days. This can be helpful for finding areas of your product where users experience significant frustration.",
+      "filters": {
+        "events": [
+          {
+            "id": "$rageclick",
+            "math": "dau",
+            "name": "$rageclick",
+            "type": "events",
+            "order": 0
+          }
+        ],
+        "actions": [],
+        "date_to": null,
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$current_url",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "breakdown_type": "event",
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "What devices do users access my product with?",
+      "description": "This chart shows which devices your unique users have been using over the past 30 days, so you can ensure you are designing your products and website for the right primary devices. You can get more detailed information by changing the 'Breakdown by' to 'Device ID'.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0
+          }
+        ],
+        "actions": [],
+        "compare": false,
+        "date_to": null,
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$device_type",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "breakdown_type": "event",
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "How do users find my product?",
+      "description": "This chart shows the referring domain for all pageviews by unique users in the last 30 days. This can be especially helpful for understanding how users find your product.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0,
+            "properties": []
+          }
+        ],
+        "actions": [],
+        "date_to": null,
+        "display": "ActionsBarValue",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$referring_domain",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "breakdown_type": "event",
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "What browsers do users prefer?",
+      "description": "This chart tracks which browsers your unique users have been using over the last 30 days. It can be useful to correlate this with which devices users have been using, so you can ensure compatibility. Hover over a section to reveal what proportion of your users each browser represents.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0
+          }
+        ],
+        "actions": [],
+        "date_to": null,
+        "display": "ActionsPie",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$browser",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "breakdown_type": "event",
+        "filter_test_accounts": true
+      },
+      "layouts": {},
+      "color": null
+    },
+    {
+      "type": "INSIGHT",
+      "name": "Where are my users located?",
+      "description": "This chart shows where all pageviews for unique users originated from over the last 30 days.",
+      "filters": {
+        "events": [
+          {
+            "id": "$pageview",
+            "math": "dau",
+            "name": "$pageview",
+            "type": "events",
+            "order": 0
+          }
+        ],
+        "actions": [],
+        "date_to": null,
+        "display": "WorldMap",
+        "insight": "TRENDS",
+        "interval": "day",
+        "breakdown": "$geoip_country_code",
+        "date_from": "-30d",
+        "new_entity": [],
+        "properties": [],
+        "breakdown_type": "person",
+        "filter_test_accounts": true,
+        "aggregation_axis_format": "numeric"
+      },
+      "layouts": {},
+      "color": null
+    }
+  ]
+}
