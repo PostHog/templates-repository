@@ -12,5 +12,12 @@
     "description": "The website analytics dashboard that PostHog uses",
     "verified": true,
     "maintainer": "official"
+  },
+  {
+    "name": "Advertising analytics",
+    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/25b365bc74572aaa6578525e7aec472ccb6311a4/dashboards/posthog-advertising-analytics.json"
+    "description": "How your online advertising performs, as well as where traffic comes from."
+    "verified": true,
+    "maintainer": "official"
   }
 ]
