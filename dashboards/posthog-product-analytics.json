@@ -26,7 +26,7 @@
       "color": "green",
       "filters": {
         "events": [
-          { "id": "$pageview", "math": "weekly_active", "type": "events" }
+          { "id": "$pageview", "math": "dau", "type": "events" }
         ],
         "insight": "TRENDS",
         "interval": "week"
