@@ -1,7 +1,7 @@
 [
   {
     "name": "Website traffic",
-    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/7916bed2463112a6354078065db1892eda51fd17/dashboards/posthog-website-traffic.json",
+    "url": "https://raw.githubusercontent.com/PostHog/templates-repository/7c6918aca6d5e18d1d0265fa12a9ac436a157f6e/dashboards/posthog-website-traffic.json",
     "description": "The website analytics dashboard that PostHog uses",
     "verified": true,
     "maintainer": "official"
