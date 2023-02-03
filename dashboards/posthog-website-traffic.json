@@ -35,7 +35,7 @@
           "minW": 1
         }
       },
-      "description": "Shows the number of unique users that use your app every day."
+      "description": "Shows the number of unique users over the last 30 days."
     },
     {
       "name": "Organic SEO Unique Users (Total)",
