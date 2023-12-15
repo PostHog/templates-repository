@@ -1,5 +1,9 @@
 # PostHog Templates
 
+PostHog dashboard templates lived in this repo for a little while, but they were lonely so they moved back to the main posthog/posthog repo
+
+-----
+
 ![a dalle generated image of a hedgehog by a printing press](./printing-hedgehog.png)
 
 A repository for hosting a list of PostHog Templates, both official and community ones.
